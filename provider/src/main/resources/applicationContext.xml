@@ -11,7 +11,7 @@
 
     <dubbo:protocol name="dubbo" port="20880" />
 
-    <dubbo:service interface="me.islim.service.HelloService" ref="helloService" />
+    <dubbo:service interface="me.islim.service.HelloService" ref="helloService" async="true" />
 
     <bean id="helloService" class="me.islim.service.impl.HelloServiceImpl"/>
 </beans>
