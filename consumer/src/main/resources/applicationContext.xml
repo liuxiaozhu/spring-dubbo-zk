@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
-        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <dubbo:application name="consumer"></dubbo:application>
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181" ></dubbo:registry>
 
-    <dubbo:reference interface="me.islim.service.HelloService" id="helloService" async="true" />
+    <dubbo:protocol name="hessian" port="8083" server="jetty"/>
 
-    <dubbo:consumer timeout="30000"></dubbo:consumer>
+    <dubbo:reference interface="me.islim.service.HelloService" id="helloService" protocol="hessian" async="true" />
+
 </beans>

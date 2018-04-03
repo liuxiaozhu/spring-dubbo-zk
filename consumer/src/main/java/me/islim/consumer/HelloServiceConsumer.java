@@ -5,16 +5,17 @@ import me.islim.service.HelloService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.concurrent.Callable;
+import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 public class HelloServiceConsumer {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) throws ExecutionException, InterruptedException, IOException {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         HelloService service = context.getBean(HelloService.class);
         Future<String> f = RpcContext.getContext().asyncCall(() -> service.sayHello("lxz"));
         System.out.println(f.get());
+        System.in.read();
     }
 }

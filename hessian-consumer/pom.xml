@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>me.islim</groupId>
+    <artifactId>spring-dubbo-zk</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <groupId>me.islim</groupId>
+  <artifactId>hessian-consumer</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>hessian-consumer Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>me.islim</groupId>
+      <artifactId>api</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.caucho</groupId>
+      <artifactId>hessian</artifactId>
+      <version>${hessian.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>jetty</artifactId>
+      <version>${jetty.version}</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>hessian-consumer</finalName>
+  </build>
+</project>

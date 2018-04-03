@@ -2,7 +2,7 @@
 <Configuration monitorInterval="180">
     <properties>
         <property name="LOG_HOME">/data1/logs</property>
-        <property name="LOG_NAME">thrift</property>
+        <property name="LOG_NAME">provider</property>
     </properties>
     <Appenders>
         <RollingFile name="logRollingFile" fileName="${LOG_HOME}/${LOG_NAME}.log"

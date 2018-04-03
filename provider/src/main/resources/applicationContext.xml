@@ -9,9 +9,9 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181" ></dubbo:registry>
 
-    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:protocol name="hessian" port="8083" server="jetty" />
 
-    <dubbo:service interface="me.islim.service.HelloService" ref="helloService" async="true" />
+    <dubbo:service interface="me.islim.service.HelloService" protocol="hessian" ref="helloService" async="true" />
 
     <bean id="helloService" class="me.islim.service.impl.HelloServiceImpl"/>
 </beans>
